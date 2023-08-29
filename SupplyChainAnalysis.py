@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Define the database connection
-DATABASE_URI = 'mysql://root:pppppppp@localhost/trial'  # Replace with your MySQL credentials and database name
+DATABASE_URI = 'Url With Database usr name and passwd'
 engine = create_engine(DATABASE_URI, echo=True)
 
 with engine.begin() as conn:
@@ -12,8 +12,8 @@ with engine.begin() as conn:
     data = pd.read_sql_query(query, conn)
 
 # Load supply chain data from MySQL database
-# query = "SELECT * FROM supply_chain_data"
-# data = pd.read_sql(query, engine)
+# query = "SELECT * FROM supply_chain_data" 
+# data = pd.read_sql(query, engine)  #>>>>>>>>>>>>>>>>>>>>>Deprecated, alternate approach above
 
 # Continue with the analysis calculations (same code as before)
 average_transit_time = data.groupby('route')['transit_time'].mean()
